@@ -12,11 +12,20 @@ class Jaf_Config {
    * @throws Jaf_Exception
    */
   public function __construct($data, $environment, $type = 'ini') {
+    $environment = (string) $environment;
+
     if (!in_array($type, $this->_types)) {
       throw new Jaf_Exception('Unregistered config type');
     }
 
-    $rawConfig = parse_ini_file($data, true);
+    $rawConfig = array();
+
+    switch($type) {
+      case 'ini':
+        $rawConfig = parse_ini_file($data, true);
+        break;
+    }
+
     $preConfig = array();
 
     //sort raw config elements
@@ -59,6 +68,9 @@ class Jaf_Config {
    * @return mixed
    */
   public function get($name, $section = 'default') {
+    $section = (string) $section;
+    $name = (string) $name;
+
     return isset($this->_data[$section][$name]) ? $this->_data[$section][$name] : null;
   }
 }

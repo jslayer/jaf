@@ -13,8 +13,10 @@ Jaf_Loader::addIncludePath(array(
   BASE_PATH . '/protected/lib/'
 ));
 
-$loading = Jaf_Loader::instance();
+Jaf_Loader::init();
 
 $config = new Jaf_Config(APP_PATH . '/configs/config.ini', APP_ENV);
 
-$app = new Jaf_Application(APP_ENV, $config);
+$app = new Jaf_Application(APP_ENV, APP_PATH, $config);
+
+$app->run();

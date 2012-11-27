@@ -7,7 +7,7 @@ class Jaf_Loader {
   /**
    * Singleton
    * Return instance of Loader class
-   * @return Loader
+   * @return Jaf_Loader
    */
   public static function instance() {
     static $inst = FALSE;
@@ -19,7 +19,20 @@ class Jaf_Loader {
     return $inst;
   }
 
+  /**
+   * Initialize Loader instance
+   * @return Jaf_Loader
+   */
+  public static function init() {
+    return self::instance();
+  }
+
+  /**
+   * Autoloader callback
+   * @param $className
+   */
   private function _loader($className) {
+    $className = (string) $className;
     include str_replace('_', '/', $className) . '.php';
   }
 
