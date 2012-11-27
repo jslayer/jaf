@@ -51,6 +51,13 @@ class Jaf_Config {
     $this->_data = $preConfig;
   }
 
+  /**
+   * Get the value from config object
+   *
+   * @param string $name
+   * @param string $section
+   * @return mixed
+   */
   public function get($name, $section = 'default') {
     return isset($this->_data[$section][$name]) ? $this->_data[$section][$name] : null;
   }
