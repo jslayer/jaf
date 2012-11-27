@@ -64,13 +64,14 @@ class Jaf_Config {
    * Get the value from config object
    *
    * @param string $name
+   * @param mixed $default
    * @param string $section
    * @return mixed
    */
-  public function get($name, $section = 'default') {
+  public function get($name, $default = null, $section = 'default') {
     $section = (string) $section;
     $name = (string) $name;
 
-    return isset($this->_data[$section][$name]) ? $this->_data[$section][$name] : null;
+    return isset($this->_data[$section][$name]) ? $this->_data[$section][$name] : $default;
   }
 }

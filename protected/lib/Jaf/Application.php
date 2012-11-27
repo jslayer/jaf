@@ -24,9 +24,6 @@ class Jaf_Application {
     'models'      => 'models'
   );
 
-  protected $_defaultController = 'index';
-  protected $_defaultAction     = 'index';
-
   protected $_appPath;
 
   /**
@@ -54,12 +51,27 @@ class Jaf_Application {
 
     $this->_setupLoader();
 
+    $this->_configuration();
+
     $this->_parseRequest();
   }
 
-  /*public function bootstrap() {
+  /**
+   * Process configuration
+   */
+  protected function _configuration() {
+    $defaultController = $this->_config->get('defaultAction');
 
-  }*/
+    if ($defaultController) {
+      Jaf_Request::setDefaultController($defaultController);
+    }
+
+    $defaultAction = $this->_config->get('defaultAction');
+
+    if ($defaultAction) {
+      Jaf_Request::setDefaultAction($defaultAction);
+    }
+  }
 
   public function run() {
 
