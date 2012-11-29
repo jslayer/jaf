@@ -12,15 +12,11 @@ class Jaf_Request {
   protected static $defaultAction     = 'index';
 
   public function __construct() {
-    $parts = explode('/', trim($_SERVER['PATH_INFO'], '/'));
+    $parts = isset($_SERVER['PATH_INFO']) ? explode('/', trim($_SERVER['PATH_INFO'], '/')) : array();
 
-    $this->_controller = strtolower(!empty($parts[0])
-      ? array_shift($parts)
-      : self::$defaultController);
+    $this->_controller = !empty($parts[0]) ? array_shift($parts) : self::$defaultController;
 
-    $this->_action = strtolower(!empty($parts[0])
-      ? array_shift($parts)
-      : self::$defaultAction);
+    $this->_action = !empty($parts[0]) ? array_shift($parts) : self::$defaultAction;
 
     while(count($parts) > 1) {
       $key = array_shift($parts);
@@ -96,6 +92,22 @@ class Jaf_Request {
    */
   public static function setDefaultController($value) {
     self::$defaultController = (string) $value;
+  }
+
+  /**
+   * Return controller name
+   * @return string
+   */
+  public function getControllerName() {
+    return $this->_controller;
+  }
+
+  /**
+   * Return action name
+   * @return string
+   */
+  public function getActionName() {
+    return $this->_action;
   }
 
   /**
