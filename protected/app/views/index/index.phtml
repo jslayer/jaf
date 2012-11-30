@@ -42,6 +42,7 @@ $error = $this->get('error');
           <?php if (is_array($item->category) && !empty($item->category)) { ?>
             <p class="muted">
               <?php
+                print '<span><b>' . date('M, j H:i', strtotime($item->pubDate)) . '</b></span> &nbsp; ';
                 print '<span>' . implode('</span> / <span>', $item->category) . '</span>';
               ?>
             </p>
