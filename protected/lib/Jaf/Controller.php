@@ -1,28 +1,53 @@
 <?php
+/**
+ * Jaf_Controller class file.
+ *
+ * @author    Eugene Poltorakov <jslayer@gmail.com>
+ * @license   http://opensource.org/licenses/mit-license.php
+ * @version   $Id$
+ * @category  Jaf
+ * @package   Jaf_Controller
+ */
 
+/**
+ * Base controller class
+ *
+ * @class Jaf_Controller
+ */
 class Jaf_Controller {
   /**
+   * Default action string
+   *
    * @var string
    */
   protected $_defaultAction = 'indexAction';
 
   /**
+   * Request object
+   *
    * @var Jaf_Request
    */
   protected $_request;
 
   /**
+   * Response object
+   *
    * @var Jaf_Response
    */
   protected $_response;
 
   /**
+   * View object
+   *
    * @var Jaf_View
    */
   public $view;
 
   //public final function __construct() {}
 
+  /**
+   * Dispatch the controller
+   */
   public function dispatch() {
     //call initialize method
     $this->initialize();
@@ -35,6 +60,8 @@ class Jaf_Controller {
   }
 
   /**
+   * Set the request object
+   *
    * @param Jaf_Request $request
    * @return Jaf_Controller
    */
@@ -44,6 +71,8 @@ class Jaf_Controller {
   }
 
   /**
+   * Set the response object
+   *
    * @param Jaf_Response $response
    * @return Jaf_Controller
    */
@@ -53,6 +82,8 @@ class Jaf_Controller {
   }
 
   /**
+   * Return request object
+   *
    * @return Jaf_Request
    */
   public function getRequest() {
@@ -60,6 +91,8 @@ class Jaf_Controller {
   }
 
   /**
+   * Return response object
+   *
    * @return Jaf_Response
    */
   public function getResponse() {
@@ -67,6 +100,8 @@ class Jaf_Controller {
   }
 
   /**
+   * Set default action string
+   *
    * @param $name
    * @return Jaf_Controller
    */
@@ -76,6 +111,8 @@ class Jaf_Controller {
   }
 
   /**
+   * Get default action string
+   *
    * @return string
    */
   public function getAction() {

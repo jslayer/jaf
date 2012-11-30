@@ -1,19 +1,37 @@
 <?php
+/**
+ * Jaf_Config class file.
+ *
+ * @author    Eugene Poltorakov <jslayer@gmail.com>
+ * @license   http://opensource.org/licenses/mit-license.php
+ * @version   $Id$
+ * @category  Jaf
+ * @package   Jaf_Config
+ */
 
+/**
+ * Base config class
+ *
+ * @class Jaf_Config
+ */
 class Jaf_Config {
   /**
    * Supported configuration types
+   *
    * @var array
    */
   protected  $_types = array('ini');
 
   /**
    * Actual config data
+   *
    * @var array
    */
   protected $_data = array();
 
   /**
+   * Config constructor
+   *
    * @param mixed $data
    * @param string $environment
    * @param string $type

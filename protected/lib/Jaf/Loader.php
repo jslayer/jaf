@@ -1,13 +1,30 @@
 <?php
+/**
+ * Jaf_Loader class file.
+ *
+ * @author    Eugene Poltorakov <jslayer@gmail.com>
+ * @license   http://opensource.org/licenses/mit-license.php
+ * @version   $Id$
+ * @category  Jaf
+ * @package   Jaf_Loader
+ */
 
+/**
+ * Base loader class
+ *
+ * @class Jaf_Loader
+ */
 class Jaf_Loader {
+  /**
+   * Jaf_Loader constructor
+   */
   public function __construct() {
     spl_autoload_register(array($this, '_loader'));
   }
 
   /**
-   * Singleton
-   * Return instance of Loader class
+   * Return singleton instance of Loader class
+   *
    * @return Jaf_Loader
    */
   public static function instance() {
@@ -22,6 +39,7 @@ class Jaf_Loader {
 
   /**
    * Initialize Loader instance
+   *
    * @return Jaf_Loader
    */
   public static function init() {
@@ -30,6 +48,7 @@ class Jaf_Loader {
 
   /**
    * Autoloader callback
+   *
    * @param $className
    */
   private function _loader($className) {
@@ -39,6 +58,7 @@ class Jaf_Loader {
 
   /**
    * Add include path (php.include_path)
+   *
    * @param [array|string] $path
    */
   public static function addIncludePath($path) {

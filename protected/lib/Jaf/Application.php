@@ -1,42 +1,66 @@
 <?php
+/**
+ * Jaf_Application class file.
+ *
+ * @author    Eugene Poltorakov <jslayer@gmail.com>
+ * @license   http://opensource.org/licenses/mit-license.php
+ * @version   $Id$
+ * @category  Jaf
+ * @package   Jaf_Application
+ */
+
+/**
+ * Base application class
+ *
+ * @class Jaf_Application
+ */
 class Jaf_Application {
-  /**
-   * @var Jaf_Controller
-   */
-  protected static $_front;
 
   /**
+   * Environment string
+   *
    * @var string
    */
   protected $_environment;
 
   /**
+   * Request object
+   *
    * @var Jaf_Request
    */
   protected $_request;
 
   /**
+   * Response object
+   *
    * @var Jaf_Response
    */
   protected $_response;
 
   /**
+   * View object
+   *
    * @var Jaf_View
    */
   protected $_view;
 
   /**
+   * Config object
+   *
    * @var Jaf_Config
    */
   protected $_config;
 
   /**
+   * Controller object
+   *
    * @var Jaf_Controller
    */
   protected $_controller;
 
   /**
    * List of included directories
+   *
    * @var array
    */
   protected $_directories = array(
@@ -46,18 +70,21 @@ class Jaf_Application {
 
   /**
    * Default views path (relative to app path)
+   *
    * @var string
    */
   protected $_viewsPath = 'views';
 
   /**
-   * App path
+   * App path string
+   *
    * @var string
    */
   protected $_appPath;
 
   /**
    * Initialize an application
+   *
    * @param string $environment
    * @param string $appPath
    * @param Jaf_Config $config
@@ -90,6 +117,7 @@ class Jaf_Application {
 
   /**
    * Process configuration
+   *
    * @return Jaf_Application
    */
   protected function _configuration() {
@@ -107,6 +135,8 @@ class Jaf_Application {
   }
 
   /**
+   * Runs the application
+   *
    * @throws Jaf_Exception
    * @return Jaf_Application
    */
@@ -149,6 +179,7 @@ class Jaf_Application {
 
   /**
    * Add controllers, models directory path to loader include paths
+   *
    * @return Jaf_Application
    */
   protected function _setupLoader() {
@@ -164,6 +195,8 @@ class Jaf_Application {
   }
 
   /**
+   * Create request object
+   *
    * @return Jaf_Application
    */
   protected function _parseRequest() {
@@ -172,6 +205,8 @@ class Jaf_Application {
   }
 
   /**
+   * Create response object
+   *
    * @return Jaf_Application
    */
   protected function _prepareResponse() {

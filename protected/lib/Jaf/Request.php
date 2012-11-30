@@ -1,16 +1,74 @@
 <?php
+/**
+ * Jaf_Request class file.
+ *
+ * @author    Eugene Poltorakov <jslayer@gmail.com>
+ * @license   http://opensource.org/licenses/mit-license.php
+ * @version   $Id$
+ * @category  Jaf
+ * @package   Jaf_Request
+ */
 
+/**
+ * Base request class
+ *
+ * @class Jaf_Request
+ */
 class Jaf_Request {
+  /**
+   * Static alias to GET Request method
+   *
+   * @const
+   */
   const GET  = 'GET';
+
+  /**
+   * Static alias to POST Request method
+   *
+   * @const
+   */
   const POST = 'POST';
 
+  /**
+   * Controller name
+   *
+   * @var string
+   */
   protected $_controller;
+
+  /**
+   * Action name
+   *
+   * @var string
+   */
   protected $_action;
+
+  /**
+   * Request params
+   *
+   * @var array
+   */
   protected $_params = array();
 
+  /**
+   * Default controller name
+   *
+   * @static
+   * @var string
+   */
   protected static $defaultController = 'index';
+
+  /**
+   * Default action name
+   *
+   * @static
+   * @var string
+   */
   protected static $defaultAction     = 'index';
 
+  /**
+   * Request constructor
+   */
   public function __construct() {
     $parts = isset($_SERVER['PATH_INFO']) ? explode('/', trim($_SERVER['PATH_INFO'], '/')) : array();
 
@@ -30,6 +88,7 @@ class Jaf_Request {
 
   /**
    * Return request method
+   *
    * @return string
    */
   public function getMethod() {
@@ -38,6 +97,7 @@ class Jaf_Request {
 
   /**
    * Get param
+   *
    * @param string $name
    * @param mixed $default
    * @return mixed
@@ -57,6 +117,7 @@ class Jaf_Request {
 
   /**
    * Set param
+   *
    * @param string $name
    * @param mixed $value
    */
@@ -66,6 +127,7 @@ class Jaf_Request {
 
   /**
    * Check isXmlHttpRequest
+   *
    * @return bool
    */
   public function isXHR(){
@@ -74,6 +136,7 @@ class Jaf_Request {
 
   /**
    * Return raw body
+   *
    * @return string
    */
   public function getRawBody() {
@@ -87,6 +150,7 @@ class Jaf_Request {
 
   /**
    * Set default controller string
+   *
    * @param string $value
    * @return Jaf_Request
    */
@@ -96,6 +160,7 @@ class Jaf_Request {
 
   /**
    * Return controller name
+   *
    * @return string
    */
   public function getControllerName() {
@@ -104,6 +169,7 @@ class Jaf_Request {
 
   /**
    * Return action name
+   *
    * @return string
    */
   public function getActionName() {
@@ -112,6 +178,7 @@ class Jaf_Request {
 
   /**
    * Set default action string
+   *
    * @param string $value
    * @return Jaf_Request
    */

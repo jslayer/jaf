@@ -1,7 +1,24 @@
 <?php
+/**
+ * Jaf_View class file.
+ *
+ * @author    Eugene Poltorakov <jslayer@gmail.com>
+ * @license   http://opensource.org/licenses/mit-license.php
+ * @version   $Id$
+ * @category  Jaf
+ * @package   Jaf_View
+ */
+
+/**
+ * Base view class
+ *
+ * @class Jaf_View
+ */
 class Jaf_View {
 
   /**
+   * Actual view data storage array
+   *
    * @var array
    */
   protected $_data = array();
@@ -9,10 +26,18 @@ class Jaf_View {
   /**
    * Path to the app views scripts
    * Default is : APP_PATH/views
+   *
    * @var string
    */
   protected $_viewsPath;
 
+  /**
+   * View constructor
+   *
+   * @param array $data
+   * @param string $viewsPath
+   * @throws Jaf_Exception
+   */
   public function __construct($data, $viewsPath) {
     if (is_array($data)) {
       $this->_data = $data;
@@ -26,9 +51,15 @@ class Jaf_View {
   }
 
   /**
+   * Get view data
+   *
+   * Examples:
+   * View->get('foo')
+   * View->get('foo.bar')
+   *
    * @param string $name
    * @param null|mixed $default
-   * @return array|null
+   * @return mixed|null
    */
   public function get($name, $default = NULL) {
     $value = &$this->_data;
@@ -49,6 +80,12 @@ class Jaf_View {
   }
 
   /**
+   * Set view data
+   *
+   * Examples:
+   * View->set('foo', 'Hello')
+   * View->set('foo.bar', array('hello' => 'world'))
+   *
    * @param string $name
    * @param mixed $value
    * @return Jaf_View
@@ -72,6 +109,8 @@ class Jaf_View {
   }
 
   /**
+   * Render view script
+   *
    * @param $script
    * @throws Jaf_Exception
    * @internal param string $path
