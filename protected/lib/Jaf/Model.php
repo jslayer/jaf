@@ -12,7 +12,7 @@
 /**
  * Base model class
  *
- * @class Jaf_Db_SQLite
+ * @class Jaf_Model
  */
 class Jaf_Model {
   /**
