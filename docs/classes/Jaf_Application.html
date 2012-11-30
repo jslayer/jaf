@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \Jaf_Application</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Jaf.html"><i class="icon-folder-open"></i> Jaf</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Initialize an application"><span class="description">Initialize an application</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#run" title="run :: Runs the application"><span class="description">Runs the application</span><pre>run()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#_configuration" title="_configuration :: Process configuration"><span class="description">Process configuration</span><pre>_configuration()</pre></a></li>
+<li class="method protected "><a href="#_parseRequest" title="_parseRequest :: Create request object"><span class="description">Create request object</span><pre>_parseRequest()</pre></a></li>
+<li class="method protected "><a href="#_prepareResponse" title="_prepareResponse :: Create response object"><span class="description">Create response object</span><pre>_prepareResponse()</pre></a></li>
+<li class="method protected "><a href="#_setupLoader" title="_setupLoader :: Add controllers, models directory path to loader include paths"><span class="description">Add controllers, models directory path to loader include paths</span><pre>_setupLoader()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24_appPath" title="$_appPath :: App path string"><span class="description">App path string</span><pre>$_appPath</pre></a></li>
+<li class="property protected "><a href="#%24_config" title="$_config :: Config object"><span class="description">Config object</span><pre>$_config</pre></a></li>
+<li class="property protected "><a href="#%24_controller" title="$_controller :: Controller object"><span class="description">Controller object</span><pre>$_controller</pre></a></li>
+<li class="property protected "><a href="#%24_directories" title="$_directories :: List of included directories"><span class="description">List of included directories</span><pre>$_directories</pre></a></li>
+<li class="property protected "><a href="#%24_environment" title="$_environment :: Environment string"><span class="description">Environment string</span><pre>$_environment</pre></a></li>
+<li class="property protected "><a href="#%24_request" title="$_request :: Request object"><span class="description">Request object</span><pre>$_request</pre></a></li>
+<li class="property protected "><a href="#%24_response" title="$_response :: Response object"><span class="description">Response object</span><pre>$_response</pre></a></li>
+<li class="property protected "><a href="#%24_view" title="$_view :: View object"><span class="description">View object</span><pre>$_view</pre></a></li>
+<li class="property protected "><a href="#%24_viewsPath" title="$_viewsPath :: Default views path (relative to app path)"><span class="description">Default views path (relative to app path)</span><pre>$_viewsPath</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CJaf_Application" id="\Jaf_Application"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Jaf_Application.html">Jaf_Application</a>
+</li>
+</ul>
+<div href="../classes/Jaf_Application.html" class="element class">
+<p class="short_description">Base application class</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>class</th>
+<td>Jaf_Application</td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Initialize an application</h2>
+<pre>__construct(string $environment, string $appPath, \Jaf_Config $config) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$environment</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$appPath</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$config</h4>
+<code><a href="../classes/Jaf_Config.html">\Jaf_Config</a></code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Jaf_Exception.html">\Jaf_Exception</a></code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="run" id="run"></a><div class="element clickable method public run" data-toggle="collapse" data-target=".run .collapse">
+<h2>Runs the application</h2>
+<pre>run() : <a href="../classes/Jaf_Application.html">\Jaf_Application</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/Jaf_Exception.html">\Jaf_Exception</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Jaf_Application.html">\Jaf_Application</a></code></div>
+</div></div>
+</div>
+<a name="_configuration" id="_configuration"></a><div class="element clickable method protected _configuration" data-toggle="collapse" data-target="._configuration .collapse">
+<h2>Process configuration</h2>
+<pre>_configuration() : <a href="../classes/Jaf_Application.html">\Jaf_Application</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Jaf_Application.html">\Jaf_Application</a></code></div>
+</div></div>
+</div>
+<a name="_parseRequest" id="_parseRequest"></a><div class="element clickable method protected _parseRequest" data-toggle="collapse" data-target="._parseRequest .collapse">
+<h2>Create request object</h2>
+<pre>_parseRequest() : <a href="../classes/Jaf_Application.html">\Jaf_Application</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Jaf_Application.html">\Jaf_Application</a></code></div>
+</div></div>
+</div>
+<a name="_prepareResponse" id="_prepareResponse"></a><div class="element clickable method protected _prepareResponse" data-toggle="collapse" data-target="._prepareResponse .collapse">
+<h2>Create response object</h2>
+<pre>_prepareResponse() : <a href="../classes/Jaf_Application.html">\Jaf_Application</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Jaf_Application.html">\Jaf_Application</a></code></div>
+</div></div>
+</div>
+<a name="_setupLoader" id="_setupLoader"></a><div class="element clickable method protected _setupLoader" data-toggle="collapse" data-target="._setupLoader .collapse">
+<h2>Add controllers, models directory path to loader include paths</h2>
+<pre>_setupLoader() : <a href="../classes/Jaf_Application.html">\Jaf_Application</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Jaf_Application.html">\Jaf_Application</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_appPath" id="$_appPath"> </a><div class="element clickable property protected $_appPath" data-toggle="collapse" data-target=".$_appPath .collapse">
+<h2>App path string</h2>
+<pre>$_appPath : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_config" id="$_config"> </a><div class="element clickable property protected $_config" data-toggle="collapse" data-target=".$_config .collapse">
+<h2>Config object</h2>
+<pre>$_config : <a href="../classes/Jaf_Config.html">\Jaf_Config</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_controller" id="$_controller"> </a><div class="element clickable property protected $_controller" data-toggle="collapse" data-target=".$_controller .collapse">
+<h2>Controller object</h2>
+<pre>$_controller : <a href="../classes/Jaf_Controller.html">\Jaf_Controller</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_directories" id="$_directories"> </a><div class="element clickable property protected $_directories" data-toggle="collapse" data-target=".$_directories .collapse">
+<h2>List of included directories</h2>
+<pre>$_directories : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_environment" id="$_environment"> </a><div class="element clickable property protected $_environment" data-toggle="collapse" data-target=".$_environment .collapse">
+<h2>Environment string</h2>
+<pre>$_environment : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_request" id="$_request"> </a><div class="element clickable property protected $_request" data-toggle="collapse" data-target=".$_request .collapse">
+<h2>Request object</h2>
+<pre>$_request : <a href="../classes/Jaf_Request.html">\Jaf_Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_response" id="$_response"> </a><div class="element clickable property protected $_response" data-toggle="collapse" data-target=".$_response .collapse">
+<h2>Response object</h2>
+<pre>$_response : <a href="../classes/Jaf_Response.html">\Jaf_Response</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_view" id="$_view"> </a><div class="element clickable property protected $_view" data-toggle="collapse" data-target=".$_view .collapse">
+<h2>View object</h2>
+<pre>$_view : <a href="../classes/Jaf_View.html">\Jaf_View</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24_viewsPath" id="$_viewsPath"> </a><div class="element clickable property protected $_viewsPath" data-toggle="collapse" data-target=".$_viewsPath .collapse">
+<h2>Default views path (relative to app path)</h2>
+<pre>$_viewsPath : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-11-30T13:22:58+02:00.<br></footer></div>
+</div>
+</body>
+</html>
