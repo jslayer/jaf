@@ -200,7 +200,7 @@ This method is executed after the action]]></description>
       </method>
     </class>
   </file>
-  <file path="Model.php" hash="6dac4dc69b2c2eaf522a1fa9615f616b" package="Jaf\Model">
+  <file path="Model.php" hash="4b1166e4a5a76570b25f9140a7c110a1" package="Jaf\Model">
     <docblock line="2">
       <description><![CDATA[Jaf_Model class file.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -217,7 +217,7 @@ This method is executed after the action]]></description>
       <docblock line="12">
         <description><![CDATA[Base model class]]></description>
         <long-description><![CDATA[]]></long-description>
-        <tag line="12" name="class" description="Jaf_Db_SQLite"/>
+        <tag line="12" name="class" description="Jaf_Model"/>
       </docblock>
       <property final="false" static="false" visibility="protected" line="26" namespace="global" package="Default">
         <name>$_keys</name>
