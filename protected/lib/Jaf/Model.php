@@ -18,11 +18,55 @@ class Jaf_Model {
   /**
    * TODO: Implement
    */
-  /*protected $_attributes = array();
 
-  public function __construct() {}
+  /**
+   * Array of model keys
+   * @var array
+   */
+  protected $_keys = array();
 
-  public function save() {}
+  /**
+   * Constructor
+   * @param SimpleXMLElement|array $data
+   */
+  public function __construct($data) {
+    $type = FALSE;
+
+    if (is_array($data)) {
+      $type = 'array';
+    }
+    elseif (is_object($data) && is_a($data, 'SimpleXMLElement')) {
+      $type = 'xml';
+    }
+
+    if ($type) {
+      foreach($this->_keys as $key) {
+        switch($type) {
+          case 'array':
+            if (isset($data[$key])) {
+              $this->{$key} = $data[$key];
+            }
+            break;
+          case 'xml':
+            if (isset($data->{$key})) {
+              $count = $data->{$key}->count();
+              if ($count < 2) {
+                $this->{$key} = (string) $data->{$key};
+              }
+              else {
+                $this->{$key} = array();
+                for($i=0; $i<$count; $i++) {
+                  $this->{$key}[$i] = (string) $data->{$key}->{$i};
+                }
+              }
+            }
+            break;
+        }
+      }
+    }
+  }
+
+  /*public function save() {}
 
   public function delete() {}*/
 }

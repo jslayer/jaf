@@ -62,7 +62,7 @@ class Jaf_View {
    * @return mixed|null
    */
   public function get($name, $default = NULL) {
-    $value = &$this->_data;
+    $value = $this->_data;
 
     $parts = explode('.', $name);
 
@@ -98,9 +98,9 @@ class Jaf_View {
     while($key = array_shift($parts)) {
       if (!isset($link[$key])) {
         $link[$key] = array();
-
-        $link = &$link[$key];
       }
+
+      $link = &$link[$key];
     }
 
     $link = $value;
@@ -122,6 +122,7 @@ class Jaf_View {
     if (!file_exists($path)) {
       throw new Jaf_Exception($path . 'view file not exists');
     }
+
     ob_start();
     include($path);
     return ob_get_clean();
