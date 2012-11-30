@@ -39,14 +39,14 @@ $error = $this->get('error');
         ?>
         <section>
           <h5><a href="<?php print $item->guid ?>" target="_blank"><?php print $item->title; ?></a></h5>
-          <?php if (is_array($item->category) && !empty($item->category)) { ?>
             <p class="muted">
               <?php
                 print '<span><b>' . date('M, j H:i', strtotime($item->pubDate)) . '</b></span> &nbsp; ';
-                print '<span>' . implode('</span> / <span>', $item->category) . '</span>';
+                if (!empty($item->category) && is_array($item->category)) {
+                  print '<span>' . implode('</span> / <span>', $item->category) . '</span>';
+                }
               ?>
             </p>
-          <?php } ?>
         </section>
       <?php
       }
