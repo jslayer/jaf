@@ -200,7 +200,7 @@ This method is executed after the action]]></description>
       </method>
     </class>
   </file>
-  <file path="Model.php" hash="7f6f6bf97b082c97b1e476d2d6c14f44" package="Jaf\Model">
+  <file path="Model.php" hash="6dac4dc69b2c2eaf522a1fa9615f616b" package="Jaf\Model">
     <docblock line="2">
       <description><![CDATA[Jaf_Model class file.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -219,6 +219,34 @@ This method is executed after the action]]></description>
         <long-description><![CDATA[]]></long-description>
         <tag line="12" name="class" description="Jaf_Db_SQLite"/>
       </docblock>
+      <property final="false" static="false" visibility="protected" line="26" namespace="global" package="Default">
+        <name>$_keys</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="22">
+          <description><![CDATA[Array of model keys]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="32" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="28">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="param" description="" type="\SimpleXMLElement|array" variable="$data">
+            <type by_reference="false">\SimpleXMLElement</type>
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="32">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
     </class>
   </file>
   <file path="Loader.php" hash="b964339894ce98ed9cb9258c0a929673" package="Jaf\Loader">
@@ -376,7 +404,7 @@ This method is executed after the action]]></description>
       </method>
     </class>
   </file>
-  <file path="View.php" hash="fe8698a61ef7142740d540aa8e0e4b1f" package="Jaf\View">
+  <file path="View.php" hash="d79de579e160018410f057d6e67c9438" package="Jaf\View">
     <docblock line="2">
       <description><![CDATA[Jaf_View class file.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -386,7 +414,7 @@ This method is executed after the action]]></description>
       <tag line="2" name="category" description="Jaf"/>
       <tag line="2" name="package" description="Jaf_View"/>
     </docblock>
-    <include line="126" type="Include" package="Default">
+    <include line="127" type="Include" package="Default">
       <name/>
     </include>
     <class final="false" abstract="false" namespace="global" line="17" package="Default">

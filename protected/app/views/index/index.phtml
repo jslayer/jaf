@@ -2,14 +2,66 @@
 /**
  * @var $this Jaf_View
  */
+
+$error = $this->get('error');
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <title><?php print $this->get('html.title'); ?></title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <style type="text/css">
+    section span {
+      font-size: 0.786em;
+    }
+  </style>
 </head>
 <body>
-  HELLO WORLD
+<div class="container">
+  <header>
+    <h1><a href="http://www.nytimes.com/" target="_blank"><img
+            src="<?php print $this->get('channel.image.url'); ?>"
+            alt="<?php print $this->get('html.title'); ?>" ></a></h1>
+  </header>
+
+  <hr>
+
+  <?php
+  if ($error) {
+    print $error['message'];
+  }
+  else {
+    $items = $this->get('news.items');
+
+    if (is_array($items) && !empty($items)) {
+      foreach($items as $item) {
+        ?>
+        <section>
+          <h5><a href="<?php print $item->guid ?>" target="_blank"><?php print $item->title; ?></a></h5>
+          <?php if (is_array($item->category) && !empty($item->category)) { ?>
+            <p class="muted">
+              <?php
+                print '<span>' . implode('</span> / <span>', $item->category) . '</span>';
+              ?>
+            </p>
+          <?php } ?>
+        </section>
+      <?php
+      }
+    }
+    else {
+      print '<p>EMPTY</p>';
+    }
+
+    print '<hr>';
+
+    print '<footer>';
+      print '<p class="text-info">' . $this->get('channel.copyright') .'</p>';
+      print '<p class="muted"><small>This page was created only for testing purposes.</small></p>';
+    print '</footer>';
+  }
+  ?>
+</div>
 </body>
 </html>
