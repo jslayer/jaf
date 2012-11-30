@@ -37,9 +37,10 @@ class Jaf_Application {
 
   protected $_directories = array(
     'controllers' => 'controllers',
-    'models'      => 'models',
-    'views'       => 'views'
+    'models'      => 'models'
   );
+
+  protected $_viewsPath = 'views';
 
   protected $_appPath;
 
@@ -77,6 +78,7 @@ class Jaf_Application {
 
   /**
    * Process configuration
+   * @return Jaf_Application
    */
   protected function _configuration() {
     $defaultController = $this->_config->get('defaultController');
@@ -92,14 +94,19 @@ class Jaf_Application {
     }
   }
 
+  /**
+   * @throws Jaf_Exception
+   * @return Jaf_Application
+   */
   public function run() {
+    $controllerName = $this->_request->getControllerName();
     $actionName = $this->_request->getActionName();
 
     //prepare controller name
-    $controllerClass = ucfirst($this->_request->getControllerName()) . 'Controller';
+    $controllerClass = ucfirst($controllerName) . 'Controller';
     $actionMethod = lcfirst($actionName) . 'Action';
 
-    $this->_controller = new $controllerClass($this->_request, $this->_response);
+    $this->_controller = new $controllerClass();
 
     //check method existence
     if (!method_exists($this->_controller, $actionMethod)) {
@@ -108,12 +115,29 @@ class Jaf_Application {
 
     $this->_controller->setAction($actionMethod);
 
+    $this->_controller->setRequest($this->_request);
+
+    $this->_controller->setResponse($this->_response);
+
+    //initialize view
+    $this->_view = new Jaf_View(Jaf_Registry::get('config')->get('view'), $this->_appPath . '/' . $this->_viewsPath);
+
+    $this->_controller->view = $this->_view;
+
     //Actual controller dispatch execution
     $this->_controller->dispatch();
+
+    $this->_response->setBody($this->_view->render(implode('/', array(
+      $controllerName,
+      $actionName
+    ))));
+
+    $this->_response->dispatch();
   }
 
   /**
    * Add controllers, models directory path to loader include paths
+   * @return Jaf_Application
    */
   protected function _setupLoader() {
     $dirs = array();
@@ -123,26 +147,23 @@ class Jaf_Application {
     }
 
     $this->_loader->addIncludePath($dirs);
-  }
 
-  protected function _parseRequest() {
-    $this->_request = new Jaf_Request();
-  }
-
-  protected function _prepareResponse() {
-    $this->_response = new Jaf_Response();
+    return $this;
   }
 
   /**
-   * Get the current front controller instance
-   * @return Jaf_Controller
-   * @throws Jaf_Exception
+   * @return Jaf_Application
    */
-  /*public static function front() {
-    if (!self::$_front instanceof Jaf_Controller) {
-      throw new Jaf_Exception('Front controller not initialized yet');
-    }
+  protected function _parseRequest() {
+    $this->_request = new Jaf_Request();
+    return $this;
+  }
 
-    return self::$_front;
-  }*/
+  /**
+   * @return Jaf_Application
+   */
+  protected function _prepareResponse() {
+    $this->_response = new Jaf_Response();
+    return $this;
+  }
 }

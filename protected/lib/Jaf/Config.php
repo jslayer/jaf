@@ -57,7 +57,33 @@ class Jaf_Config {
       }
     }
 
-    $this->_data = $preConfig;
+    //explode array
+    $config = array();
+    foreach($preConfig as $sKey => $sValue) {
+      $config[$sKey] = array();
+
+      foreach($sValue as $key => $value) {
+        $parts = explode('.', $key);
+
+        if (count($parts) == 1) {
+          $config[$sKey][$key] = $value;
+        }
+        else {
+          $link = &$config[$sKey];
+
+          foreach($parts as $pValue) {
+            if (!isset($link[$pValue])) {
+              $link[$pValue] = array();
+            }
+            $link = &$link[$pValue];
+          }
+
+          $link = $value;
+        }
+      }
+    }
+
+    $this->_data = $config;
   }
 
   /**
