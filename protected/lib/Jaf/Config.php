@@ -1,22 +1,57 @@
 <?php
+/**
+ * Jaf_Config class file.
+ *
+ * @author    Eugene Poltorakov <jslayer@gmail.com>
+ * @license   http://opensource.org/licenses/mit-license.php
+ * @version   $Id$
+ * @category  Jaf
+ * @package   Jaf_Config
+ */
 
+/**
+ * Base config class
+ *
+ * @class Jaf_Config
+ */
 class Jaf_Config {
+  /**
+   * Supported configuration types
+   *
+   * @var array
+   */
   protected  $_types = array('ini');
 
+  /**
+   * Actual config data
+   *
+   * @var array
+   */
   protected $_data = array();
 
   /**
+   * Config constructor
+   *
    * @param mixed $data
    * @param string $environment
    * @param string $type
    * @throws Jaf_Exception
    */
   public function __construct($data, $environment, $type = 'ini') {
+    $environment = (string) $environment;
+
     if (!in_array($type, $this->_types)) {
       throw new Jaf_Exception('Unregistered config type');
     }
 
-    $rawConfig = parse_ini_file($data, true);
+    $rawConfig = array();
+
+    switch($type) {
+      case 'ini':
+        $rawConfig = parse_ini_file($data, TRUE);
+        break;
+    }
+
     $preConfig = array();
 
     //sort raw config elements
@@ -48,10 +83,47 @@ class Jaf_Config {
       }
     }
 
-    $this->_data = $preConfig;
+    //explode array
+    $config = array();
+    foreach($preConfig as $sKey => $sValue) {
+      $config[$sKey] = array();
+
+      foreach($sValue as $key => $value) {
+        $parts = explode('.', $key);
+
+        if (count($parts) == 1) {
+          $config[$sKey][$key] = $value;
+        }
+        else {
+          $link = &$config[$sKey];
+
+          foreach($parts as $pValue) {
+            if (!isset($link[$pValue])) {
+              $link[$pValue] = array();
+            }
+            $link = &$link[$pValue];
+          }
+
+          $link = $value;
+        }
+      }
+    }
+
+    $this->_data = $config;
   }
 
-  public function get($name, $section = 'default') {
-    return isset($this->_data[$section][$name]) ? $this->_data[$section][$name] : null;
+  /**
+   * Get the value from config object
+   *
+   * @param string $name
+   * @param mixed $default
+   * @param string $section
+   * @return mixed
+   */
+  public function get($name, $default = NULL, $section = 'default') {
+    $section = (string) $section;
+    $name = (string) $name;
+
+    return isset($this->_data[$section][$name]) ? $this->_data[$section][$name] : $default;
   }
 }

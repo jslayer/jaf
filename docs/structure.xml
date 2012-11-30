@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a10" title="">
+  <file path="Db/Sqlite.php" hash="4ee3733e11d4a1f906eb22522395c86e" package="Jaf\Db\SQLite">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Db_SQLite class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Db_SQLite"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Db_SQLite</name>
+      <full_name>\Jaf_Db_SQLite</full_name>
+      <docblock line="12">
+        <description><![CDATA[Class to work with SQLite databases]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Db_SQLite"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Controller.php" hash="e1cb566da6483a35781a529bae3bf9e8" package="Jaf\Controller">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Controller class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Controller"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Controller</name>
+      <full_name>\Jaf_Controller</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base controller class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Controller"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="23" namespace="global" package="Default">
+        <name>$_defaultAction</name>
+        <default><![CDATA['indexAction']]></default>
+        <docblock line="18">
+          <description><![CDATA[Default action string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="30" namespace="global" package="Default">
+        <name>$_request</name>
+        <default><![CDATA[]]></default>
+        <docblock line="25">
+          <description><![CDATA[Request object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="var" description="" type="\Jaf_Request">
+            <type by_reference="false">\Jaf_Request</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="37" namespace="global" package="Default">
+        <name>$_response</name>
+        <default><![CDATA[]]></default>
+        <docblock line="32">
+          <description><![CDATA[Response object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="var" description="" type="\Jaf_Response">
+            <type by_reference="false">\Jaf_Response</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="44" namespace="global" package="Default">
+        <name>$view</name>
+        <default><![CDATA[]]></default>
+        <docblock line="39">
+          <description><![CDATA[View object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="39" name="var" description="" type="\Jaf_View">
+            <type by_reference="false">\Jaf_View</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="51" package="Default">
+        <name>dispatch</name>
+        <full_name>dispatch</full_name>
+        <docblock line="48">
+          <description><![CDATA[Dispatch the controller]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="68" package="Default">
+        <name>setRequest</name>
+        <full_name>setRequest</full_name>
+        <docblock line="62">
+          <description><![CDATA[Set the request object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="62" name="param" description="" type="\Jaf_Request" variable="$request">
+            <type by_reference="false">\Jaf_Request</type>
+          </tag>
+          <tag line="62" name="return" description="" type="\Jaf_Controller">
+            <type by_reference="false">\Jaf_Controller</type>
+          </tag>
+        </docblock>
+        <argument line="68">
+          <name>$request</name>
+          <default><![CDATA[]]></default>
+          <type>\Jaf_Request</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="79" package="Default">
+        <name>setResponse</name>
+        <full_name>setResponse</full_name>
+        <docblock line="73">
+          <description><![CDATA[Set the response object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="73" name="param" description="" type="\Jaf_Response" variable="$response">
+            <type by_reference="false">\Jaf_Response</type>
+          </tag>
+          <tag line="73" name="return" description="" type="\Jaf_Controller">
+            <type by_reference="false">\Jaf_Controller</type>
+          </tag>
+        </docblock>
+        <argument line="79">
+          <name>$response</name>
+          <default><![CDATA[]]></default>
+          <type>\Jaf_Response</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="89" package="Default">
+        <name>getRequest</name>
+        <full_name>getRequest</full_name>
+        <docblock line="84">
+          <description><![CDATA[Return request object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="84" name="return" description="" type="\Jaf_Request">
+            <type by_reference="false">\Jaf_Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="98" package="Default">
+        <name>getResponse</name>
+        <full_name>getResponse</full_name>
+        <docblock line="93">
+          <description><![CDATA[Return response object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="return" description="" type="\Jaf_Response">
+            <type by_reference="false">\Jaf_Response</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="108" package="Default">
+        <name>setAction</name>
+        <full_name>setAction</full_name>
+        <docblock line="102">
+          <description><![CDATA[Set default action string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="102" name="param" description="" type="" variable="$name"/>
+          <tag line="102" name="return" description="" type="\Jaf_Controller">
+            <type by_reference="false">\Jaf_Controller</type>
+          </tag>
+        </docblock>
+        <argument line="108">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="118" package="Default">
+        <name>getAction</name>
+        <full_name>getAction</full_name>
+        <docblock line="113">
+          <description><![CDATA[Get default action string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="113" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="126" package="Default">
+        <name>initialize</name>
+        <full_name>initialize</full_name>
+        <docblock line="122">
+          <description><![CDATA[Override this in your controllers
+This method is executed before the action]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="132" package="Default">
+        <name>destructor</name>
+        <full_name>destructor</full_name>
+        <docblock line="128">
+          <description><![CDATA[Override this in your controllers
+This method is executed after the action]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Model.php" hash="7f6f6bf97b082c97b1e476d2d6c14f44" package="Jaf\Model">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Model class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Model"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Model</name>
+      <full_name>\Jaf_Model</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base model class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Db_SQLite"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Loader.php" hash="b964339894ce98ed9cb9258c0a929673" package="Jaf\Loader">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Loader class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Loader"/>
+    </docblock>
+    <include line="56" type="Include" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Loader</name>
+      <full_name>\Jaf_Loader</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base loader class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Loader"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="18">
+          <description><![CDATA[Jaf_Loader constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="30" package="Default">
+        <name>instance</name>
+        <full_name>instance</full_name>
+        <docblock line="25">
+          <description><![CDATA[Return singleton instance of Loader class]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="return" description="" type="\Jaf_Loader">
+            <type by_reference="false">\Jaf_Loader</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="45" package="Default">
+        <name>init</name>
+        <full_name>init</full_name>
+        <docblock line="40">
+          <description><![CDATA[Initialize Loader instance]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="return" description="" type="\Jaf_Loader">
+            <type by_reference="false">\Jaf_Loader</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="54" package="Default">
+        <name>_loader</name>
+        <full_name>_loader</full_name>
+        <docblock line="49">
+          <description><![CDATA[Autoloader callback]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="49" name="param" description="" type="" variable="$className"/>
+        </docblock>
+        <argument line="54">
+          <name>$className</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="64" package="Default">
+        <name>addIncludePath</name>
+        <full_name>addIncludePath</full_name>
+        <docblock line="59">
+          <description><![CDATA[Add include path (php.include_path)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="59" name="param" description="" type="\[array|\string]" variable="$path">
+            <type by_reference="false">\[array</type>
+            <type by_reference="false">\string]</type>
+          </tag>
+        </docblock>
+        <argument line="64">
+          <name>$path</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Response.php" hash="c23a1eb9bfa35b673aff4211bda2c34f" package="Jaf\Response">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Response class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Response"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Response</name>
+      <full_name>\Jaf_Response</full_name>
+      <docblock line="12">
+        <description><![CDATA[Jaf_Response maintain the request headers & body]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Response"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="23" namespace="global" package="Default">
+        <name>$_body</name>
+        <default><![CDATA[]]></default>
+        <docblock line="18">
+          <description><![CDATA[Response body]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="30" namespace="global" package="Default">
+        <name>$_contentType</name>
+        <default><![CDATA['text/html']]></default>
+        <docblock line="25">
+          <description><![CDATA[Uses in header generation while response dispatch]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="38" package="Default">
+        <name>setBody</name>
+        <full_name>setBody</full_name>
+        <docblock line="32">
+          <description><![CDATA[Set the request body]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="param" description="" type="mixed" variable="$data">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="32" name="return" description="" type="\Jaf_Response">
+            <type by_reference="false">\Jaf_Response</type>
+          </tag>
+        </docblock>
+        <argument line="38">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="46" package="Default">
+        <name>dispatch</name>
+        <full_name>dispatch</full_name>
+        <docblock line="43">
+          <description><![CDATA[Dispatch the response.]]></description>
+          <long-description><![CDATA[<p>Send data to the client</p>]]></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="View.php" hash="fe8698a61ef7142740d540aa8e0e4b1f" package="Jaf\View">
+    <docblock line="2">
+      <description><![CDATA[Jaf_View class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_View"/>
+    </docblock>
+    <include line="126" type="Include" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_View</name>
+      <full_name>\Jaf_View</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base view class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_View"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="24" namespace="global" package="Default">
+        <name>$_data</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="19">
+          <description><![CDATA[Actual view data storage array]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="19" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="32" namespace="global" package="Default">
+        <name>$_viewsPath</name>
+        <default><![CDATA[]]></default>
+        <docblock line="26">
+          <description><![CDATA[Path to the app views scripts
+Default is : APP_PATH/views]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="26" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="41" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="34">
+          <description><![CDATA[View constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="34" name="param" description="" type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="34" name="param" description="" type="string" variable="$viewsPath">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="34" name="throws" description="" type="\Jaf_Exception">
+            <type by_reference="false">\Jaf_Exception</type>
+          </tag>
+        </docblock>
+        <argument line="41">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="41">
+          <name>$viewsPath</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="64" package="Default">
+        <name>get</name>
+        <full_name>get</full_name>
+        <docblock line="53">
+          <description><![CDATA[Get view data]]></description>
+          <long-description><![CDATA[<p>Examples:
+View->get('foo')
+View->get('foo.bar')</p>]]></long-description>
+          <tag line="53" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="53" name="param" description="" type="null|mixed" variable="$default">
+            <type by_reference="false">null</type>
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="53" name="return" description="" type="mixed|null">
+            <type by_reference="false">mixed</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="64">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="64">
+          <name>$default</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="93" package="Default">
+        <name>set</name>
+        <full_name>set</full_name>
+        <docblock line="82">
+          <description><![CDATA[Set view data]]></description>
+          <long-description><![CDATA[<p>Examples:
+View->set('foo', 'Hello')
+View->set('foo.bar', array('hello' => 'world'))</p>]]></long-description>
+          <tag line="82" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="82" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="82" name="return" description="" type="\Jaf_View">
+            <type by_reference="false">\Jaf_View</type>
+          </tag>
+        </docblock>
+        <argument line="93">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="93">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="119" package="Default">
+        <name>render</name>
+        <full_name>render</full_name>
+        <docblock line="111">
+          <description><![CDATA[Render view script]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="111" name="param" description="" type="" variable="$script"/>
+          <tag line="111" name="throws" description="" type="\Jaf_Exception">
+            <type by_reference="false">\Jaf_Exception</type>
+          </tag>
+          <tag line="111" name="internal" description="param string $path"/>
+          <tag line="111" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="119">
+          <name>$script</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Application.php" hash="f8f7dce8d174b8f5afd45117cddfa4e1" package="Jaf\Application">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Application class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Application"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Application</name>
+      <full_name>\Jaf_Application</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base application class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Application"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="24" namespace="global" package="Default">
+        <name>$_environment</name>
+        <default><![CDATA[]]></default>
+        <docblock line="19">
+          <description><![CDATA[Environment string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="19" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="31" namespace="global" package="Default">
+        <name>$_request</name>
+        <default><![CDATA[]]></default>
+        <docblock line="26">
+          <description><![CDATA[Request object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="26" name="var" description="" type="\Jaf_Request">
+            <type by_reference="false">\Jaf_Request</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="38" namespace="global" package="Default">
+        <name>$_response</name>
+        <default><![CDATA[]]></default>
+        <docblock line="33">
+          <description><![CDATA[Response object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="33" name="var" description="" type="\Jaf_Response">
+            <type by_reference="false">\Jaf_Response</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="45" namespace="global" package="Default">
+        <name>$_view</name>
+        <default><![CDATA[]]></default>
+        <docblock line="40">
+          <description><![CDATA[View object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="var" description="" type="\Jaf_View">
+            <type by_reference="false">\Jaf_View</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="52" namespace="global" package="Default">
+        <name>$_config</name>
+        <default><![CDATA[]]></default>
+        <docblock line="47">
+          <description><![CDATA[Config object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="var" description="" type="\Jaf_Config">
+            <type by_reference="false">\Jaf_Config</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="59" namespace="global" package="Default">
+        <name>$_controller</name>
+        <default><![CDATA[]]></default>
+        <docblock line="54">
+          <description><![CDATA[Controller object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="54" name="var" description="" type="\Jaf_Controller">
+            <type by_reference="false">\Jaf_Controller</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="66" namespace="global" package="Default">
+        <name>$_directories</name>
+        <default><![CDATA[array('controllers' => 'controllers', 'models' => 'models')]]></default>
+        <docblock line="61">
+          <description><![CDATA[List of included directories]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="61" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="76" namespace="global" package="Default">
+        <name>$_viewsPath</name>
+        <default><![CDATA['views']]></default>
+        <docblock line="71">
+          <description><![CDATA[Default views path (relative to app path)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="83" namespace="global" package="Default">
+        <name>$_appPath</name>
+        <default><![CDATA[]]></default>
+        <docblock line="78">
+          <description><![CDATA[App path string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="78" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="93" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="85">
+          <description><![CDATA[Initialize an application]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="85" name="param" description="" type="string" variable="$environment">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="85" name="param" description="" type="string" variable="$appPath">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="85" name="param" description="" type="\Jaf_Config" variable="$config">
+            <type by_reference="false">\Jaf_Config</type>
+          </tag>
+          <tag line="85" name="throws" description="" type="\Jaf_Exception">
+            <type by_reference="false">\Jaf_Exception</type>
+          </tag>
+        </docblock>
+        <argument line="93">
+          <name>$environment</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="93">
+          <name>$appPath</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="93">
+          <name>$config</name>
+          <default><![CDATA[]]></default>
+          <type>\Jaf_Config</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="123" package="Default">
+        <name>_configuration</name>
+        <full_name>_configuration</full_name>
+        <docblock line="118">
+          <description><![CDATA[Process configuration]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="118" name="return" description="" type="\Jaf_Application">
+            <type by_reference="false">\Jaf_Application</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="143" package="Default">
+        <name>run</name>
+        <full_name>run</full_name>
+        <docblock line="137">
+          <description><![CDATA[Runs the application]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="137" name="throws" description="" type="\Jaf_Exception">
+            <type by_reference="false">\Jaf_Exception</type>
+          </tag>
+          <tag line="137" name="return" description="" type="\Jaf_Application">
+            <type by_reference="false">\Jaf_Application</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="185" package="Default">
+        <name>_setupLoader</name>
+        <full_name>_setupLoader</full_name>
+        <docblock line="180">
+          <description><![CDATA[Add controllers, models directory path to loader include paths]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="180" name="return" description="" type="\Jaf_Application">
+            <type by_reference="false">\Jaf_Application</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="202" package="Default">
+        <name>_parseRequest</name>
+        <full_name>_parseRequest</full_name>
+        <docblock line="197">
+          <description><![CDATA[Create request object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="197" name="return" description="" type="\Jaf_Application">
+            <type by_reference="false">\Jaf_Application</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="212" package="Default">
+        <name>_prepareResponse</name>
+        <full_name>_prepareResponse</full_name>
+        <docblock line="207">
+          <description><![CDATA[Create response object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="207" name="return" description="" type="\Jaf_Application">
+            <type by_reference="false">\Jaf_Application</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Config.php" hash="a557f6a5228e11fed44a33dc35024778" package="Jaf\Config">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Config class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Config"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Config</name>
+      <full_name>\Jaf_Config</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base config class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Config"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="23" namespace="global" package="Default">
+        <name>$_types</name>
+        <default><![CDATA[array('ini')]]></default>
+        <docblock line="18">
+          <description><![CDATA[Supported configuration types]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="30" namespace="global" package="Default">
+        <name>$_data</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="25">
+          <description><![CDATA[Actual config data]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="32">
+          <description><![CDATA[Config constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="param" description="" type="mixed" variable="$data">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="32" name="param" description="" type="string" variable="$environment">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="32" name="param" description="" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="32" name="throws" description="" type="\Jaf_Exception">
+            <type by_reference="false">\Jaf_Exception</type>
+          </tag>
+        </docblock>
+        <argument line="40">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="40">
+          <name>$environment</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="40">
+          <name>$type</name>
+          <default><![CDATA['ini']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="123" package="Default">
+        <name>get</name>
+        <full_name>get</full_name>
+        <docblock line="115">
+          <description><![CDATA[Get the value from config object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="115" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="115" name="param" description="" type="mixed" variable="$default">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="115" name="param" description="" type="string" variable="$section">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="115" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="123">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="123">
+          <name>$default</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+        <argument line="123">
+          <name>$section</name>
+          <default><![CDATA['default']]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Request.php" hash="068cfed99c3de6a7029bf0761ce9929d" package="Jaf\Request">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Request class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Request"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Request</name>
+      <full_name>\Jaf_Request</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base request class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Request"/>
+      </docblock>
+      <constant namespace="global" line="23" package="Default">
+        <name>GET</name>
+        <full_name>GET</full_name>
+        <value><![CDATA['GET']]></value>
+        <docblock line="18">
+          <description><![CDATA[Static alias to GET Request method]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="const" description=""/>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="30" package="Default">
+        <name>POST</name>
+        <full_name>POST</full_name>
+        <value><![CDATA['POST']]></value>
+        <docblock line="25">
+          <description><![CDATA[Static alias to POST Request method]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="const" description=""/>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="37" namespace="global" package="Default">
+        <name>$_controller</name>
+        <default><![CDATA[]]></default>
+        <docblock line="32">
+          <description><![CDATA[Controller name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="44" namespace="global" package="Default">
+        <name>$_action</name>
+        <default><![CDATA[]]></default>
+        <docblock line="39">
+          <description><![CDATA[Action name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="39" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="51" namespace="global" package="Default">
+        <name>$_params</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="46">
+          <description><![CDATA[Request params]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="46" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="protected" line="59" namespace="global" package="Default">
+        <name>$defaultController</name>
+        <default><![CDATA['index']]></default>
+        <docblock line="53">
+          <description><![CDATA[Default controller name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="static" description=""/>
+          <tag line="53" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="protected" line="67" namespace="global" package="Default">
+        <name>$defaultAction</name>
+        <default><![CDATA['index']]></default>
+        <docblock line="61">
+          <description><![CDATA[Default action name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="61" name="static" description=""/>
+          <tag line="61" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="72" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="69">
+          <description><![CDATA[Request constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="94" package="Default">
+        <name>getMethod</name>
+        <full_name>getMethod</full_name>
+        <docblock line="89">
+          <description><![CDATA[Return request method]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="89" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="105" package="Default">
+        <name>getParam</name>
+        <full_name>getParam</full_name>
+        <docblock line="98">
+          <description><![CDATA[Get param]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="98" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="98" name="param" description="" type="mixed" variable="$default">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="98" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="105">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="105">
+          <name>$default</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="124" package="Default">
+        <name>setParam</name>
+        <full_name>setParam</full_name>
+        <docblock line="118">
+          <description><![CDATA[Set param]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="118" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="118" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="124">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="124">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="133" package="Default">
+        <name>isXHR</name>
+        <full_name>isXHR</full_name>
+        <docblock line="128">
+          <description><![CDATA[Check isXmlHttpRequest]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="128" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="142" package="Default">
+        <name>getRawBody</name>
+        <full_name>getRawBody</full_name>
+        <docblock line="137">
+          <description><![CDATA[Return raw body]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="137" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="157" package="Default">
+        <name>setDefaultController</name>
+        <full_name>setDefaultController</full_name>
+        <docblock line="151">
+          <description><![CDATA[Set default controller string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="151" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="151" name="return" description="" type="\Jaf_Request">
+            <type by_reference="false">\Jaf_Request</type>
+          </tag>
+        </docblock>
+        <argument line="157">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="166" package="Default">
+        <name>getControllerName</name>
+        <full_name>getControllerName</full_name>
+        <docblock line="161">
+          <description><![CDATA[Return controller name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="161" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="175" package="Default">
+        <name>getActionName</name>
+        <full_name>getActionName</full_name>
+        <docblock line="170">
+          <description><![CDATA[Return action name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="170" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="185" package="Default">
+        <name>setDefaultAction</name>
+        <full_name>setDefaultAction</full_name>
+        <docblock line="179">
+          <description><![CDATA[Set default action string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="179" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="179" name="return" description="" type="\Jaf_Request">
+            <type by_reference="false">\Jaf_Request</type>
+          </tag>
+        </docblock>
+        <argument line="185">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Collection.php" hash="b12f7993f772e71a9788ea3bfc92860d" package="Jaf\Collection">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Collection class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Collection"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Collection</name>
+      <full_name>\Jaf_Collection</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base collection class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Collection"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Exception.php" hash="0a58e46de766b0f4c1753971f258dfee" package="Jaf\Exception">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Exception class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Exception"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends>\Exception</extends>
+      <name>Jaf_Exception</name>
+      <full_name>\Jaf_Exception</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base exception class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Exception"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="28" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="22">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="param" description="" type="string" variable="$message">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="22" name="param" description="" type="int" variable="$code">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="28">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$code</name>
+          <default><![CDATA[0]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Registry.php" hash="a93486f0d56c88781328e3ab0ddf306e" package="Jaf\Registry">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Registry class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Registry"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Registry</name>
+      <full_name>\Jaf_Registry</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base registry class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Registry"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="23" namespace="global" package="Default">
+        <name>$_data</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="18">
+          <description><![CDATA[Registry data]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="30" package="Default">
+        <name>instance</name>
+        <full_name>instance</full_name>
+        <docblock line="25">
+          <description><![CDATA[Registry singleton factory]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="return" description="" type="\Jaf_Registry">
+            <type by_reference="false">\Jaf_Registry</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="46" package="Default">
+        <name>set</name>
+        <full_name>set</full_name>
+        <docblock line="40">
+          <description><![CDATA[Registry static setter]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="40" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="46">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="46">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="58" package="Default">
+        <name>get</name>
+        <full_name>get</full_name>
+        <docblock line="52">
+          <description><![CDATA[Registry static getter]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="52" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="52" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="58">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Db.php" hash="27dcd4edb9a220f464cb46df65d67a70" package="Jaf\Db">
+    <docblock line="2">
+      <description><![CDATA[Jaf_Db class file.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Eugene Poltorakov &lt;jslayer@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="version" description="$Id$"/>
+      <tag line="2" name="category" description="Jaf"/>
+      <tag line="2" name="package" description="Jaf_Db"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Default">
+      <extends/>
+      <name>Jaf_Db</name>
+      <full_name>\Jaf_Db</full_name>
+      <docblock line="12">
+        <description><![CDATA[Base database class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="class" description="Jaf_Db"/>
+      </docblock>
+    </class>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="Jaf" full_name="Jaf">
+    <package name="Application" full_name="Jaf\Application"/>
+    <package name="Collection" full_name="Jaf\Collection"/>
+    <package name="Config" full_name="Jaf\Config"/>
+    <package name="Controller" full_name="Jaf\Controller"/>
+    <package name="Db" full_name="Jaf\Db">
+      <package name="SQLite" full_name="Jaf\Db\SQLite"/>
+    </package>
+    <package name="Exception" full_name="Jaf\Exception"/>
+    <package name="Loader" full_name="Jaf\Loader"/>
+    <package name="Model" full_name="Jaf\Model"/>
+    <package name="Registry" full_name="Jaf\Registry"/>
+    <package name="Request" full_name="Jaf\Request"/>
+    <package name="Response" full_name="Jaf\Response"/>
+    <package name="View" full_name="Jaf\View"/>
+  </package>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
