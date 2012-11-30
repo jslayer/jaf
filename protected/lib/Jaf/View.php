@@ -6,6 +6,11 @@ class Jaf_View {
    */
   protected $_data = array();
 
+  /**
+   * Path to the app views scripts
+   * Default is : APP_PATH/views
+   * @var string
+   */
   protected $_viewsPath;
 
   public function __construct($data, $viewsPath) {

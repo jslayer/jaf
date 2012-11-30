@@ -1,4 +1,5 @@
 <?php
+
 class Jaf_Loader {
   public function __construct() {
     spl_autoload_register(array($this, '_loader'));

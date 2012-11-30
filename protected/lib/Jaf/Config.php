@@ -1,8 +1,16 @@
 <?php
 
 class Jaf_Config {
+  /**
+   * Supported configuration types
+   * @var array
+   */
   protected  $_types = array('ini');
 
+  /**
+   * Actual config data
+   * @var array
+   */
   protected $_data = array();
 
   /**
@@ -22,7 +30,7 @@ class Jaf_Config {
 
     switch($type) {
       case 'ini':
-        $rawConfig = parse_ini_file($data, true);
+        $rawConfig = parse_ini_file($data, TRUE);
         break;
     }
 
@@ -94,7 +102,7 @@ class Jaf_Config {
    * @param string $section
    * @return mixed
    */
-  public function get($name, $default = null, $section = 'default') {
+  public function get($name, $default = NULL, $section = 'default') {
     $section = (string) $section;
     $name = (string) $name;
 

@@ -1,6 +1,10 @@
 <?php
 class Jaf_Registry {
-  private $_data = array();
+  /**
+   * Registry data
+   * @var array
+   */
+  protected $_data = array();
 
   public function __construct() {}
 
@@ -36,6 +40,6 @@ class Jaf_Registry {
   public static function get($name) {
     $inst = self::instance();
 
-    return isset($inst->_data[$name]) ? $inst->_data[$name] : null;
+    return isset($inst->_data[$name]) ? $inst->_data[$name] : NULL;
   }
 }

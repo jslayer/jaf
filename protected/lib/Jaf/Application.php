@@ -35,13 +35,25 @@ class Jaf_Application {
    */
   protected $_controller;
 
+  /**
+   * List of included directories
+   * @var array
+   */
   protected $_directories = array(
     'controllers' => 'controllers',
     'models'      => 'models'
   );
 
+  /**
+   * Default views path (relative to app path)
+   * @var string
+   */
   protected $_viewsPath = 'views';
 
+  /**
+   * App path
+   * @var string
+   */
   protected $_appPath;
 
   /**

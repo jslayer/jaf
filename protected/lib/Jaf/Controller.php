@@ -82,7 +82,15 @@ class Jaf_Controller {
     return $this->_defaultAction;
   }
 
+  /**
+   * Override this in your controllers
+   * This method is executed before the action
+   */
   protected function initialize() {}
 
+  /**
+   * Override this in your controllers
+   * This method is executed after the action
+   */
   protected function destructor() {}
 }

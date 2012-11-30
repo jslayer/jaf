@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * TODO: Implement
+ */
 class Jaf_Model {
   protected $_attributes = array();
 

@@ -1,4 +1,5 @@
 <?php
-class Jaf_Db_Sqlite {
-  
-}
+/**
+ * TODO: Implement
+ */
+class Jaf_Db_SQLite {}
